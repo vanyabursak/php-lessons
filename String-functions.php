@@ -11,3 +11,5 @@ echo strtolower($string);//все слова в малом регистре
 echo strtoupper($string);//все слова в большом регистр
 echo trim($string);//удаляет пробели
 echo strstr($string,"e");//возращает участок строки после елемента
+echo substr_count($string,"x");//сколько символов в строке
+echo str_repeat("hello,",3);//повтор елемента
