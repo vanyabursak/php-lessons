@@ -43,14 +43,15 @@ $array3 = array_merge($array1,$array2);//слияние масивов
 print_r($array3);
 echo  "<br/>";
 
-
 $slice = [1,2,3,4,5,5,6,7];
 var_dump($slice);
 echo  "<br/>";
 $slice = array_slice($slice,3,4);//обрезание массива
 var_dump($slice);
-
-
+echo  "<br/>";
+$unset = [356,353,6,];//удаление елемента
+ unset($unset[1]);
+var_dump($unset);
 
                         //асоцыативные масивы
 
