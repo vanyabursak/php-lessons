@@ -7,4 +7,8 @@ echo "<br/>"
 echo "</br>"
 ;?>
 <?php include("Mathematical-functions.php");?>
+<?php
+echo "</br>"
+;?>
+<?php include("Arrays-functions.php");?>
 
