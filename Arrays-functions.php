@@ -41,6 +41,14 @@ $array1 = [2,5,6];
 $array2 = [0,1,3,];
 $array3 = array_merge($array1,$array2);//слияние масивов
 print_r($array3);
+echo  "<br/>";
+
+
+$slice = [1,2,3,4,5,5,6,7];
+var_dump($slice);
+echo  "<br/>";
+$slice = array_slice($slice,3,4);//обрезание массива
+var_dump($slice);
 
 
 
