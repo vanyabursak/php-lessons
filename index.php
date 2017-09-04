@@ -1,1 +1,1 @@
-<?php
+<?php include("files.php");?>
