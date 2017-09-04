@@ -1,5 +1,5 @@
 
-<?php include("files.php");?>
+<?php //include("files.php");?>
 
 <?php include("String-functions.php") ;?>
 <?php
