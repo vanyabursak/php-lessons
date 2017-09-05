@@ -17,5 +17,6 @@ echo "</br>"
 echo "</br>"
 ;?>
 <?php include("global-variables.php");?>
+<?php include("form-processing.php");?>
 
 
