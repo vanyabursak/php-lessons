@@ -1,11 +1,14 @@
 <?php
-    if(isset($_POST["done"])) {//Isset нажатие на какуюто кнопку патом переходим на ету страницу
-        if ($_POST["name"] == "") {
-            echo "Введите имя. <a href='/'>Исправить</a>";
-        } else {
-            header("Location:index.php");
-        }
-    }
+
+
+//
+//    if(isset($_POST["done"])) {//Isset нажатие на какуюто кнопку затем переходим на ету страницу
+//        if ($_POST["name"] == "") {
+//            echo "Введите имя. <a href='/'>Исправить</a>";
+//        } else {
+//            header("Location:index.php");
+//        }
+//    }
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +19,7 @@
 
 </head>
 <body>
-    <form name="test" action=""  method="post"><!--action(путь на страницу)-->
+    <form name="test" action="check.php"  method="post"><!--action(путь на страницу)-->
         <label>Имя: </label><br/>
         <input type="text" name="name" placeholder="name"><br/>
         <label>Email: </label><br/>
