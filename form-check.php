@@ -112,13 +112,6 @@ Enter Password (must contain at least 6 characters):
 <input type="submit" name="submitB" value="Submit"/>
 </form>
 
-
-
-
-
-
-
-
 </body>
 </html>
 <?
