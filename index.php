@@ -1,23 +1,23 @@
 
 <?php //include("files.php");?>
 
-<?php include("String-functions.php") ;?>
+<?php //include("String-functions.php") ;?>
 <?php
-echo "<br/>"
+//echo "<br/>"
 ;?>
 <?php
-echo "</br>"
+//echo "</br>"
 ;?>
-<?php include("Mathematical-functions.php");?>
+<?php //include("Mathematical-functions.php");?>
 <?php
-echo "</br>"
+//echo "</br>"
 ;?>
-<?php include("Arrays-functions.php");?>
+<?php //include("Arrays-functions.php");?>
 <?php
-echo "</br>"
+//echo "</br>"
 ;?>
-<?php include("global-variables.php");?>
+<?php //include("global-variables.php");?>
 <?php include("form-processing.php");?>
-<?php include("form-check.php");?>
+<?php //include("form-check.php");?>
 
 
