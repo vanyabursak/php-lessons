@@ -14,7 +14,6 @@ if (isset($_POST['form']) && $_POST['form'] === 'registration') {
             $message = "Имя не должно быть пустое";
             break;
         }
-
         // проверка имя на длину
         $name = $_POST['name'];
         $nameLen = strlen($name);
@@ -30,46 +29,79 @@ if (isset($_POST['form']) && $_POST['form'] === 'registration') {
             $message = "Имя не должно быть больше $maxNameLen символов";
             break;
         }
-
-
-
         // проверка емейла на пустоту
         if (!isset($_POST['email']) || $_POST['email'] === '') {
             $status = 'danger';
             $message = "Емейл не должн быть пустым";
             break;
         }
-
         // проверка емейла на знаки
-
-
+        $Email = $_POST['email'];
+        if(!preg_match("/^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/", $Email)) {
+            $status = 'danger';
+            $message = "Уведите правильный емейл";
+            break;
+        }
         // проверка телефона на пустоту
-        if (!isset($_POST['tel']) || $_POST['tel'] === '' ){
+        if (!isset($_POST['tel']) || $_POST['tel'] === '' ) {
             $status = 'danger';
             $message = "Телефон не должен быть пустым";
             break;
         }
-
-
+        // проверка правельности ввода телефона
+        $Tel = $_POST['tel'];
+        // todo
+        if(!preg_match("/^\+380\d{9}$/", $Tel)) {
+            $status = 'danger';
+            $message = "Неверно введен телефон";
+            break;
+        }
         // проверка пароля на пустоту
-        if (!isset($_POST['pass']) || $_POST['pass'] === '' ){
+        if (!isset($_POST['pass']) || $_POST['pass'] === '' ) {
             $status = 'danger';
             $message = "Пароль не должен быть пустым";
             break;
         }
-
-
+        // проверка правельности введения пароля
+        $Pass = $_POST['pass'];
+        // todo
+        if(!preg_match("/^[\da-zA-Z_]{6,20}$/",$Pass)) {
+            $status = 'danger';
+            $message = "неверно введен пароль";
+            break;
+        }
         // проверка повторного пароля на пустоту
-        if (!isset($_POST['pass-conf']) || $_POST['pass-conf'] === ''){
+        if (!isset($_POST['pass-conf']) || $_POST['pass-conf'] === '') {
             $status = 'danger';
             $message = "Повторний пароль не должен быть пустым";
+            break;
         }
-
-
+        //проверка повторения пароля
+        $Pass2 = $_POST['pass-conf'];
+        if ($Pass2 !== $Pass) {
+            $status = 'danger';
+            $message = "неверно введен повторний пароль";
+            break;
+        }
         // проверка дати на пустоту
-        if (!isset($_POST['birth']) || $_POST['birth'] === ''){
+        if (!isset($_POST['birth']) || $_POST['birth'] === '') {
             $status = 'danger';
             $message = "дата не должна быть пуста";
+            break;
+        }
+        //проверка правильности ввода даты
+        $test_date = $_POST['birth'];
+        $test_arr  = explode('-', $test_date);
+        if (count($test_arr) == 3) {
+            if (!checkdate($test_arr[0], $test_arr[1], $test_arr[2])) {
+                $status = 'danger';
+                $message = "неправильная дата";
+                break;
+            } else {
+                // problem with dates ...
+            }
+        } else {
+            // problem with input ...
         }
 
     } while (0);
@@ -114,7 +146,7 @@ if (isset($_POST['form']) && $_POST['form'] === 'registration') {
                             <label for="example-email-input" class="col-form-label">Email</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control" type="email" name="email" placeholder="bootstrap@example.com" id="example-email-input">
+                            <input class="form-control" type="text" name="email" placeholder="bootstrap@example.com" id="example-email-input">
                         </div>
                     </div>
                     <div class="form-group row">
