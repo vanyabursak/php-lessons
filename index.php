@@ -17,7 +17,8 @@
 //echo "</br>"
 ;?>
 <?php //include("global-variables.php");?>
-<?php include("form-processing.php");?>
+<?php //include("form-processing.php");?>
 <?php //include("form-check.php");?>
+<?php include("cookie.php");?>
 
 
