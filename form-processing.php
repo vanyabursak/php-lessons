@@ -51,7 +51,15 @@ if (isset($_POST['form']) && $_POST['form'] === 'registration') {
         // проверка правельности ввода телефона
         $Tel = $_POST['tel'];
         // todo
-        if(!preg_match("/^\+380\d{9}$/", $Tel)) {
+        if(!preg_match("/^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/", $Tel)) {
+     //       Съедает следующие телефоны:
+   // +7(903)888-88-88
+   // 8(999)99-999-99
+   // +380(67)777-7-777
+   // 001-541-754-3010
+   // +1-541-754-3010
+   // 19-49-89-636-48018
+   // +233 205599853
             $status = 'danger';
             $message = "Неверно введен телефон";
             break;
@@ -65,7 +73,7 @@ if (isset($_POST['form']) && $_POST['form'] === 'registration') {
         // проверка правельности введения пароля
         $Pass = $_POST['pass'];
         // todo
-        if(!preg_match("/^[\da-zA-Z_]{6,20}$/",$Pass)) {
+        if(!preg_match("/^[A-Z][\da-zA-Z_]{6,20}$/",$Pass)) {
             $status = 'danger';
             $message = "неверно введен пароль";
             break;
@@ -93,15 +101,11 @@ if (isset($_POST['form']) && $_POST['form'] === 'registration') {
         $test_date = $_POST['birth'];
         $test_arr  = explode('-', $test_date);
         if (count($test_arr) == 3) {
-            if (!checkdate($test_arr[0], $test_arr[1], $test_arr[2])) {
+            if (!checkdate($test_arr[2], $test_arr[1],$test_arr[0] )) {
                 $status = 'danger';
                 $message = "неправильная дата";
                 break;
-            } else {
-                // problem with dates ...
             }
-        } else {
-            // problem with input ...
         }
 
     } while (0);
