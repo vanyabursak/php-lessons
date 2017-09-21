@@ -11,7 +11,7 @@ class Car {
 class Bicycle {
     const WHEELS = 2;
 
-    public function test(){
+    public function test() {
         echo Car::WHEELS; //вызов внутри класса
         echo self::WHEELS; //вызов внутри класса
     }

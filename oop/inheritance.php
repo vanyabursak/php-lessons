@@ -1,6 +1,6 @@
 <?php
 
-class Vehicle{
+class Vehicle {
     public $color;
     public $speed;
     public $brand;
@@ -11,8 +11,14 @@ class Vehicle{
     }
 }
 
-class Bicycle extends Vehicle { //extends - наследование класса Vehicle
+class Bicycle extends Vehicle {               //extends - наследование класса Vehicle
     public $type;
+    const CALORIES_PER_HOUR = 500;
+    public function caloriesBurned($distance){
+        $time = $this->tripTime($distance);
+        $calories = $time * self::CALORIES_PER_HOUR;
+        return $calories;
+    }
 }
 
 class Car extends Vehicle {
@@ -29,13 +35,20 @@ $car1->speed = 110;
 $car1->fuel = 12;
 
 $car2 = new Car;
-$car1->speed = 130;
-$car1->fuel = 14;
+$car2->speed = 130;
+$car2->fuel = 14;
 
 $bicycle = new Bicycle;
 $bicycle->speed = 20;
 
+
+$distance = 100;
 echo "<br>Car1 time:".$car1->tripTime($distance);
 echo "<br>Car2 time:".$car2->tripTime($distance);
 echo "<br>bicycle time:".$bicycle->tripTime($distance);
 
+echo "<br>";
+
+echo "<br>Car1 fuelConsumption:".$car1->fuelConsumption($distance);
+echo "<br>Car2 fuelConsumption:".$car1->fuelConsumption($distance);
+echo "<br>bicycle caloriesBurned:".$bicycle->caloriesBurned($distance);
