@@ -118,7 +118,7 @@ if (isset($_POST['form']) && $_POST['form'] === 'registration') {
 <head>
     <title>Обработка форм</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -135,7 +135,7 @@ if (isset($_POST['form']) && $_POST['form'] === 'registration') {
             <!-- form -->
             <div class="col-3"></div>
             <div class="col-6">
-                <form name="test" action="form-processing.php"  method="post">
+                <form name="test" action="form-processing.php" method="post">
                     <input type="hidden" name="form" value="registration">
                     <div class="form-group row">
                         <div class="col-3">
