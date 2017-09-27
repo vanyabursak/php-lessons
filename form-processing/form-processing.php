@@ -50,7 +50,7 @@ if (isset($_POST['form']) && $_POST['form'] === 'registration') {
         }
         // проверка правельности ввода телефона
         $Tel = $_POST['tel'];
-        // todo
+
         if(!preg_match("/^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/", $Tel)) {
      //       Съедает следующие телефоны:
    // +7(903)888-88-88
@@ -72,7 +72,7 @@ if (isset($_POST['form']) && $_POST['form'] === 'registration') {
         }
         // проверка правельности введения пароля
         $Pass = $_POST['pass'];
-        // todo
+
         if(!preg_match("/^[A-Z][\da-zA-Z_]{6,20}$/",$Pass)) {
             $status = 'danger';
             $message = "неверно введен пароль";
